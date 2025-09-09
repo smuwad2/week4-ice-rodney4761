@@ -11,7 +11,7 @@
 
    <input type="text" id="inputText">
    <!-- add a button here for adding new item -->
-
+   <button id="btnAdd" onclick="addItem()">Enter</button>
    <ul>
       <li>Notebook<!--<button>Delete</button></li>-->
       <li>Jello</li>
@@ -24,6 +24,15 @@
    <script>
 
       // add code here
+      function addItem() {
+         const itemVal = document.getElementById("inputText").value;
+         // create the li element
+         let liElem = document.createElement("li");
+         liElem.innerText = itemVal;
+         // build the DOM Tree
+         const ulElem = document.getElementsByTagName("ul")[0];
+         ulElem.appendChild(liElem)
+      }
 
    </script>
 
