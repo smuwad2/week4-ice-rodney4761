@@ -11,7 +11,7 @@
 
         /* add CSS code here */
         .square {
-            border-radius: 0;
+            border-radius: 0px;
         }
 
         .circle {
@@ -31,24 +31,23 @@
 
     <script>
         var square=true;
-        var divElem = document.getElementById("div1");
        // add code here
         function changeShape() {
-            // let divElem = document.getelementById("div1");
-            // if (square) {
-            //     divElem.style.borderRadius = "50%";
-            // }
-            // else {
-            //     divElem.style.borderRadius = "0";
-            // }
-            // // To change square value from true to false
-            // square=!square;
-
-            if (square)
-                divElem.className = "square";
-            else
-                divElem.className = "circle";
+            let divElem = document.getElementById("div1");
+            if (square) {
+                divElem.style.borderRadius = "50%";
+            }
+            else {
+                divElem.style.borderRadius = "0";
+            }
+            // To change square value from true to false
             square=!square;
+
+            // if (square)
+            //     divElem.className = "square";
+            // else
+            //     divElem.className = "circle";
+            // square=!square;
         }       
         
     </script>
