@@ -24,7 +24,35 @@
                 // Empty password: Password must be non-empty.
                 var errorMessages="";
                 
-                
+                let formElem = document.forms[formName]
+                // To get the inputs using the name, .value to get the val
+                const idVal = formElem["id"].value;
+                const ageVal = formElem["age"].value;
+                const emailVal = formElem["email"].value;
+                const passwordVal = formElem["password"].value;
+                // .length to give u the length of the string
+                if (idVal.length > 10) {    
+                    errorMessages += "ID cannot exceed 10 characters. \n"
+                } 
+                if (ageVal<10 || ageVal > 40) {
+                    errorMessages += "Age must be between 10 and 40. \n"
+                }
+                // checks for the index of the string u provided within the string to search
+                // If not found, it returns -1
+                // You can also use .includes()
+                if (emailVal.indexOf("@") == -1){
+                    errorMessages += "Email must contain the character @."
+                }
+                if (passwordVal.trim().length == 0) {
+                    errorMessages += "Password must be non-empty."
+                }
+                if (errorMessages.length > 0) {
+                    alert(errorMessages);
+                    // causes a small error window to pop up
+                    return false;
+                    // When return false, the form is not submitted. (The url doesnt change)
+                }
+                return true; // form is submitted here
             }
      
          </script>
